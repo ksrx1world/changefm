@@ -11,7 +11,8 @@ setup(
     author_email="onwheelmeals@gmail.com",
     entry_points=''' 
     [console_scripts]
-    changefn=changefn:cli
-    
+    changeip=changefn:ip
+    changesubnet=changefn:subnet
+    changegateway=changefn:gateway
     '''
 )
