@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="changefn",
-    version="1.0",
+    version="1.01",
     py_modules=['changefn'],
     install_requires=[
         'Click'
