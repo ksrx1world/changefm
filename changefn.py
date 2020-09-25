@@ -22,7 +22,7 @@ def check_if_string_in_file(file_name, string_to_search):
 # This removeline fn will remove line with the help of given searched string 
 # resulted by the check_if_string_in_file fn
 
-def removeline(stringg):
+def removeline(stringg, ethh):
     with open("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), "r+") as f:
         d = f.readlines()
         f.seek(0)
@@ -38,7 +38,7 @@ def removeline(stringg):
 def ip(ethh):
         """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider enp0s3 as an adapter name"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'IPADDR=')
-        removeline(stringg)
+        removeline(stringg, ethh)
         if stringg == False:
             stringg="None"
         else:
@@ -58,7 +58,7 @@ def ip(ethh):
 def subnet(ethh):
         """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider enp0s3 as an adapter name"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'NETMASK')
-        removeline(stringg)
+        removeline(stringg, ethh)
         if stringg == False:
             stringg="None"
         else:
@@ -79,7 +79,7 @@ def subnet(ethh):
 def gateway(ethh):
         """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider enp0s3 as an adapter name"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'GATEWAY')
-        removeline(stringg)
+        removeline(stringg, ethh)
         if stringg == False:
             stringg="None"
         else:
