@@ -33,7 +33,7 @@ def removeline(stringg):
 
 # this function will change ip address when bootproto in static mode.
 @click.command()
-@click.option('--ethh',default='enp0s3')
+@click.option('--ethh',type=str,default="enp0s3")
 def ip(ethh):
         """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider enp0s3 as an adapter name"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'IPADDR=')
@@ -53,7 +53,7 @@ def ip(ethh):
 
 # this function will change subnet(netmask) address when bootproto in static mode.
 @click.command()
-@click.option('--ethh',default='enp0s3')
+@click.option('--ethh',type=str,default="enp0s3")
 def subnet(ethh):
         """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider enp0s3 as an adapter name"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'NETMASK')
@@ -73,7 +73,7 @@ def subnet(ethh):
 
 # this function will change Gateway address when bootproto in static mode.
 @click.command()
-@click.option('--ethh',default='enp0s3')
+@click.option('--ethh',type=str,default="enp0s3")
 def gateway(ethh):
         """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider enp0s3 as an adapter name"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'GATEWAY')
