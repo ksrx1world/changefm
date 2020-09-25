@@ -8,19 +8,18 @@ you need to run this command
 afterwards 
 run command in the shell to change your Ip address
 
-    changefn ip enp0s3  
+    changeip enp0s3  
 
 
 
-where "changefn" is your script name ,"ip" is the function within script, "enp0s3" is your adapter name
+where changeip is a function which changes ip within changefn module, "enp0s3" is your adapter name
 If you don't enter adapter name then bydefault it will take "enp0s3" as a adapter.
 
 same for changing subnet
 
-    changefn subnet enp0s3
-
+    changesubnet enp0s3
 
 
 same for changing gateway 
 
-    changefn gateway enp0s3    
+    changegateway enp0s3    
