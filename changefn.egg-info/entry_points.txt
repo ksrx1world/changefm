@@ -1,6 +1,5 @@
  
     [console_scripts]
-    changeip=changefn:changeip
-    changesubnet=changefn:changesubnet
-    changegateway=changefn:changegateway
+    changefn=changefn:cli
+    
     

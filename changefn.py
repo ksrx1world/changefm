@@ -4,6 +4,10 @@ import os
 ethh= "enp0s3" #adapter name
 stringg=""
 
+@click.group()
+def cli():
+    pass
+
 #This function will check if string in present in file or not. 
 # if present then it will print the line but don't remove it
 
@@ -30,7 +34,7 @@ def removeline(stringg):
 # this function will change ip address when bootproto in static mode.
 @click.command()
 @click.option('--ethh',default='enp0s3')
-def changeip(ethh):
+def ip(ethh):
         """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider 
          enp0s3 as an adapter name"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'IPADDR=')
@@ -51,7 +55,7 @@ def changeip(ethh):
 # this function will change subnet(netmask) address when bootproto in static mode.
 @click.command()
 @click.option('--ethh',default='enp0s3')
-def changesubnet(ethh):
+def subnet(ethh):
          """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider 
          enp0s3 as an adapter name"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'NETMASK')
@@ -72,7 +76,7 @@ def changesubnet(ethh):
 # this function will change Gateway address when bootproto in static mode.
 @click.command()
 @click.option('--ethh',default='enp0s3')
-def changegateway(ethh):
+def gateway(ethh):
         """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider 
          enp0s3 as an adapter name"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'GATEWAY')
