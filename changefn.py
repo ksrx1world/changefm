@@ -35,8 +35,7 @@ def removeline(stringg):
 @click.command()
 @click.option('--ethh',default='enp0s3')
 def ip(ethh):
-        """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider 
-         enp0s3 as an adapter name"""
+        """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider enp0s3 as an adapter name"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'IPADDR=')
         removeline(stringg)
         if stringg == False:
@@ -56,8 +55,7 @@ def ip(ethh):
 @click.command()
 @click.option('--ethh',default='enp0s3')
 def subnet(ethh):
-         """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider 
-         enp0s3 as an adapter name"""
+         """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider enp0s3 as an adapter name"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'NETMASK')
         removeline(stringg)
         if stringg == False:
@@ -77,8 +75,7 @@ def subnet(ethh):
 @click.command()
 @click.option('--ethh',default='enp0s3')
 def gateway(ethh):
-        """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider 
-         enp0s3 as an adapter name"""
+        """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider enp0s3 as an adapter name"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'GATEWAY')
         removeline(stringg)
         if stringg == False:
