@@ -33,10 +33,10 @@ def removeline(stringg, ethh):
 
 # this function will change ip address when bootproto in static mode.
 @click.command()
-@click.argument('ethh')
-# @click.option('--ethh',type=str,default="enp0s3")
+# @click.argument('ethh')
+@click.option('--ethh',type=str,prompt="Enter you Adapter name like eth0 or enp0s3" )
 def ip(ethh):
-        """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider enp0s3 as an adapter name"""
+        """ Enter changeip command and you will get prompt in which you need to enter your Adapter like eth0"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'IPADDR=')
         removeline(stringg, ethh)
         if stringg == False:
@@ -54,9 +54,10 @@ def ip(ethh):
 
 # this function will change subnet(netmask) address when bootproto in static mode.
 @click.command()
-@click.argument('ethh')
+@click.option('--ethh',type=str,prompt="Enter you Adapter name like eth0 or enp0s3" )
+# @click.argument('ethh')
 def subnet(ethh):
-        """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider enp0s3 as an adapter name"""
+        """ Enter changesubnet command and you will get prompt in which you need to enter your Adapter like eth0"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'NETMASK')
         removeline(stringg, ethh)
         if stringg == False:
@@ -74,10 +75,11 @@ def subnet(ethh):
 
 # this function will change Gateway address when bootproto in static mode.
 @click.command()
-@click.argument('ethh')
+@click.option('--ethh',type=str,prompt="Enter you Adapter name like eth0 or enp0s3" )
+# @click.argument('ethh')
 # @click.option('--ethh',type=str,default="enp0s3")
 def gateway(ethh):
-        """ ethh is the name of your adapter , If you don't enter ethh in argument then by default it will consider enp0s3 as an adapter name"""
+        """ Enter changegateway command and you will get prompt in which you need to enter your Adapter like eth0"""
         stringg=check_if_string_in_file("/etc/sysconfig/network-scripts/ifcfg-{}".format(ethh), 'GATEWAY')
         removeline(stringg, ethh)
         if stringg == False:
